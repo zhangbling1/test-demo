@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>赵云与阿斗 · 测试demo</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../site/site.css">
+<link rel="stylesheet" href="../tools/demo.css">
+</head>
+<body class="t-zy">
+<div class="tex">
+
+<nav class="nav"><div class="wrap">
+  <a class="back" href="../index.html">← 测试demo</a>
+  <span class="name">赵云与阿斗</span>
+  <div class="links"><a href="#idea">思路</a><a href="#look">视觉</a><a href="#pages">页面</a><a href="#play">试玩</a></div>
+  <a class="other" href="../方向二-躺平过冬/index.html">方向二 · 躺平过冬 →</a>
+</div></nav>
+
+<header class="wrap hero">
+  <div>
+    <span class="kicker rv">方向一 · 改编自《赵云与阿斗》</span>
+    <h1 class="display rv" style="--d:.08s">赵云与阿斗</h1>
+    <p class="tagline rv" style="--d:.16s">三国的人，西游的画</p>
+    <p class="lead rv" style="--d:.22s">人物和玩法全照原作：<b>赵云、阿斗、刀枪骑弓、凑名字召武将</b>。画面换成西游的样子：Q版小人、祥云铺路、天宫的金瓦红柱。</p>
+    <div class="btns rv" style="--d:.28s"><a class="btn btn-p" href="#play">试玩一局 <span class="ar">→</span></a><a class="btn btn-g" href="#pages">看全部页面</a></div>
+    <div class="facts rv" style="--d:.34s"><div><b>07</b><span>个页面</span></div><div><b>1V1</b><span>竖屏对战</span></div><div><b>4+5</b><span>兵种 + 武将</span></div></div>
+  </div>
+  <div class="stack rv" style="--d:.15s">
+    <div class="halo"></div>
+    <div class="device d2"><img src="export/web/04-战斗.jpg" alt="战斗"></div>
+    <div class="device d1"><img src="export/web/01-主页.jpg" alt="主页"></div>
+  </div>
+  <div class="scroll-hint"><i></i>往下看</div>
+</header>
+
+<section class="sec" id="idea"><div class="wrap">
+  <div class="sec-head rv"><span class="no">01</span><h2><small>ADAPTATION</small>改编思路</h2><p>题目要求把《赵云与阿斗》做成西游题材。这里的做法是：故事和规则不动，只换画面——三国的人物，借西游的画法。</p></div>
+  <p class="big-quote rv">守的还是<em>阿斗</em>，打的还是<em>曹营</em>；<br>只是路成了祥云，命成了仙桃。</p>
+  <div class="map">
+    <div class="row rv"><div class="was">阿斗的三条命</div><div class="arr">→</div><div class="now"><b>三颗仙桃</b><span>掉一颗就补给馒头，留着原作「卖血经济」</span></div></div>
+    <div class="row rv" style="--d:.06s"><div class="was">刀 · 枪 · 骑 · 弓</div><div class="arr">→</div><div class="now"><b>四色令牌兵</b><span>刀红、枪蓝、骑绿、弓橙；等级是牌底的金菱</span></div></div>
+    <div class="row rv"><div class="was">凑名字召武将</div><div class="arr">→</div><div class="now"><b>「赵」+「云」召出赵云</b><span>底栏「将缘」显示凑字进度</span></div></div>
+    <div class="row rv" style="--d:.06s"><div class="was">怪物走的路</div><div class="arr">→</div><div class="now"><b>一条祥云路</b><span>云朵描边成路，终点坐着阿斗</span></div></div>
+    <div class="row rv"><div class="was">1V1 的对手</div><div class="arr">→</div><div class="now"><b>曹营夏侯惇，守曹冲</b><span>蜀魏对垒：打我方的是曹兵，打对手的是蜀兵</span></div></div>
+    <div class="row rv" style="--d:.06s"><div class="was">匹配</div><div class="arr">→</div><div class="now"><b>点将台</b><span>罗盘转着找对手，找到后两半对撞出一个「战」</span></div></div>
+    <div class="row rv"><div class="was">商店</div><div class="arr">→</div><div class="now"><b>云中集市</b><span>掌柜是刘备的财主糜竺；今日特供只在当天生效</span></div></div>
+    <div class="row rv" style="--d:.06s"><div class="was">按钮与导航</div><div class="arr">→</div><div class="now"><b>金令牌、天宫屋檐</b><span>主按钮是金色令牌，底栏是一排金瓦</span></div></div>
+  </div>
+</div></section>
+
+<section class="sec" id="look"><div class="wrap">
+  <div class="sec-head rv"><span class="no">02</span><h2><small>VISUAL</small>视觉</h2><p>Q版两头半身，豆豆眼、腮红、平涂粗描边；色彩取《大闹天宫》那一路的朱红、金和群青。</p></div>
+  <h3 class="sub-h rv">角色 <span>我方蜀、对手魏，各自守一个孩子</span></h3>
+  <div class="stage rv" id="lineup"><span class="cap">赵云 · 阿斗 · 夏侯惇 · 曹冲 · 曹兵 · 蜀兵 · 许褚</span></div>
+  <h3 class="sub-h rv">界面零件 <span>兵牌、武将牌、按钮、货币、血量</span></h3>
+  <div class="parts" id="parts"></div>
+  <h3 class="sub-h rv">配色</h3>
+  <div class="pal">
+    <div class="sw rv"><i style="background:#fbf2dc"></i><div><b>米白</b><code>#FBF2DC</code></div></div>
+    <div class="sw rv" style="--d:.04s"><i style="background:#2b1a12"></i><div><b>墨</b><code>#2B1A12</code></div></div>
+    <div class="sw rv" style="--d:.08s"><i style="background:#d6402b"></i><div><b>朱红</b><code>#D6402B</code></div></div>
+    <div class="sw rv" style="--d:.12s"><i style="background:linear-gradient(#fff2b0,#f7c445 45%,#d4861a)"></i><div><b>金</b><code>#F2B53A</code></div></div>
+    <div class="sw rv" style="--d:.16s"><i style="background:#2f6db0"></i><div><b>群青</b><code>#2F6DB0</code></div></div>
+    <div class="sw rv" style="--d:.2s"><i style="background:#36a07c"></i><div><b>石绿</b><code>#36A07C</code></div></div>
+    <div class="sw rv" style="--d:.24s"><i style="background:#8cc3e3"></i><div><b>天青</b><code>#8CC3E3</code></div></div>
+    <div class="sw rv" style="--d:.28s"><i style="background:#7a55a8"></i><div><b>紫</b><code>#7A55A8</code></div></div>
+  </div>
+  <h3 class="sub-h rv">字体</h3>
+  <div class="type">
+    <div class="rv"><div class="smp" style="font-family:'STXingkai','华文行楷',serif;color:var(--accent)">赵云与阿斗</div><b>标题 · 华文行楷</b><span>大标题、「大胜」「惜败」</span></div>
+    <div class="rv" style="--d:.06s"><div class="smp" style="font-family:'STXinwei','华文新魏',serif">刀枪骑弓</div><b>兵牌与按钮 · 华文新魏</b><span>兵牌、按钮、名牌</span></div>
+    <div class="rv" style="--d:.12s"><div class="smp" style="font-family:'STKaiti','KaiTi',serif;font-size:40px;padding:7px 0">再胜一局</div><b>说明文字 · 华文楷体</b><span>提示、描述、数据</span></div>
+  </div>
+</div></section>
+
+<section class="sec" id="pages"><div class="wrap">
+  <div class="sec-head rv"><span class="no">03</span><h2><small>SCREENS</small>页面一览</h2><p>750×1334 竖屏，右上角给小游戏的胶囊按钮留了位置。点一张看大图，左右键翻页。</p></div>
+  <div class="gallery" id="gallery"></div>
+</div></section>
+
+<section class="sec" id="play"><div class="wrap">
+  <div class="sec-head rv"><span class="no">04</span><h2><small>PLAYABLE</small>试玩</h2><p>从主页点「开战」，匹配完就进战斗。战斗能真玩：征兵抽字、拖上阵、同字同级合成、凑齐赵云放「七进七出」。</p></div>
+  <div class="play">
+    <div class="play-phone rv"><div id="phone"><div id="stage"></div></div><div class="under"><span>右边面板能跳页、加速</span><a href="demo.html">全屏试玩 ↗</a></div></div>
+    <aside class="panel rv" id="panel" style="--d:.1s"></aside>
+  </div>
+</div></section>
+
+<div class="wrap" style="padding-top:20px">
+  <a class="next to-tp rv" href="../方向二-躺平过冬/index.html"><div><small>NEXT · 方向二</small><h3>躺平过冬</h3><p>《躺平发育》改成动物题材：躺平就是冬眠，熬到春天。</p></div><div class="device"><img src="../方向二-躺平过冬/export/web/01-主页.jpg" alt="躺平过冬主页" loading="lazy"></div></a>
+  <footer class="foot"><span>测试demo · 游戏 UI · 方向一</span><a href="../index.html">回到首页 ↑</a></footer>
+</div>
+
+</div>
+<script src="../tools/sketch.js"></script>
+<script src="pages.js"></script>
+<script src="../tools/demo.js"></script>
+<script src="demo.js"></script>
+<script>
+  // 角色台和界面零件，直接用游戏里的画法
+  (function () {
+    const P = PARTS, T = SK.text;
+    const vb = (w, h, inner) => `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
+    const tag = (x, y, t) => `<rect x="${x - t.length * 11 - 14}" y="${y - 17}" width="${t.length * 22 + 28}" height="34" rx="17" fill="#2b1a12" opacity=".78"/>` + T(x, y + 1, t, { size: 18, font: 'wei', mid: true, fill: '#ffe28c' });
+    window.SITE = {
+      defs: P.GRAD,
+      lineup() {
+        let s = `<rect width="1200" height="460" fill="url(#skyG)"/>` + P.rays(600, 120, 900, 24, .35);
+        s += P.puff(-60, 330, 420, 90, { n: 6 }) + P.puff(360, 340, 520, 80, { n: 7 }) + P.puff(840, 330, 440, 90, { n: 6 });
+        const g = (x, w) => `<ellipse cx="${x}" cy="368" rx="${w}" ry="10" fill="#2b1a12" opacity=".14"/>`;
+        s += g(150, 70) + P.zhaoyunFull(150, 262, .95);
+        s += g(330, 34) + P.adou(330, 282, .9, { body: true, happy: true, cheer: true });
+        s += g(520, 62) + P.xiahouFull(500, 262, .95);
+        s += g(760, 34) + P.caochong(760, 292, .9, { body: true });
+        s += g(890, 26) + P.caobing(890, 322, 1.3);
+        s += g(990, 26) + P.caobing(990, 322, 1.3, { shu: true });
+        s += g(1110, 40) + P.caobing(1110, 312, 1.65, { boss: true });
+        s += tag(150, 412, '赵云') + tag(330, 412, '阿斗') + tag(520, 412, '夏侯惇') + tag(760, 412, '曹冲') + tag(890, 412, '曹兵') + tag(990, 412, '蜀兵') + tag(1110, 412, '许褚');
+        return vb(1200, 460, s);
+      },
+      parts() {
+        const tiles = list => vb(440, 116, list.map((u, i) => P.tile(12 + i * 106, 8, 92, u)).join(''));
+        return [
+          [tiles([{ ch: '刀', lv: 2 }, { ch: '枪', lv: 3 }, { ch: '骑', lv: 1 }, { ch: '弓', lv: 4 }]), '兵牌 · 金菱是等级'],
+          [tiles([{ gen: 'zhaoyun', lv: 2 }, { gen: 'guanyu' }, { gen: 'zhangfei' }, { gen: 'huangzhong' }]), '武将牌'],
+          [tiles([{ ch: '赵' }, { ch: '云' }, 0, 'lock']), '名字字 · 空格 · 待开垦'],
+          [vb(330, 130, P.goldBtn(10, 8, 310, 112, '开 战', { sub: '1V1 · 守护阿斗', size: 50, ls: 12 })), '主按钮 · 金令牌'],
+          [vb(330, 130, P.plainBtn(30, 22, 270, 88, '再战一局', { size: 34 })), '次按钮'],
+          [vb(330, 100, P.pill(4, 10, 180, (a, b, c) => P.mantou(a, b + 2, c), '2,380') + P.pill(196, 10, 130, P.yuanbao, '66') + P.peach(110, 78, 1.2) + P.peach(150, 78, 1.2) + P.peach(190, 78, 1.2) + P.peach(230, 78, 1.2, false)), '货币 · 阿斗的仙桃'],
+          [vb(330, 130, `<g transform="translate(-300 -490)">${P.waveBadge('第七波', '02:41', '首领许褚来袭！')}</g>`), '波次与首领预警'],
+          [vb(330, 130, P.ribbon(165, 64, 220, '长坂坡 · 汉字塔防', { size: 20 })), '缎带标题']
+        ];
+      }
+    };
+  })();
+</script>
+<script src="../site/site.js"></script>
+</body>
+</html>
