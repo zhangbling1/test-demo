@@ -81,6 +81,10 @@ const SCRIPTS = {
   let n = 0;
   const shot = async name => { const f = path.join(out, `demo-${String(++n).padStart(2, '0')}-${name}.png`); await page.locator('#phone').screenshot({ path: f }); console.log(f); };
   await SCRIPTS[scriptName](page, shot);
+  // 精灵要真的有大小（网站样式曾把它们压成 0 宽，逻辑照跑但看不见）
+  await page.evaluate(() => Demo.go('battle')); await page.waitForTimeout(9000);
+  const zero = await page.evaluate(() => [...document.querySelectorAll('#stage img.spr')].filter(i => getComputedStyle(i).display !== 'none' && i.getBoundingClientRect().width < 4).length);
+  if (zero) errs.push(`有 ${zero} 张精灵宽度为 0，看不见`);
   console.log(errs.length ? '错误:\n' + errs.join('\n') : '没有报错');
   await browser.close();
 })();

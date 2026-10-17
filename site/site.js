@@ -28,7 +28,8 @@
     const box = $('#gallery');
     if (!box || !window.PAGES) return;
     const shots = window.PAGES.map((p, i) => ({ no: String(i + 1).padStart(2, '0'), name: p.name, note: p.note || '', src: `export/web/${String(i + 1).padStart(2, '0')}-${p.name}.jpg`, big: `export/${String(i + 1).padStart(2, '0')}-${p.name}.png` }));
-    box.innerHTML = shots.map((s, i) => `<figure class="shot rv" style="--d:${(i % 4) * .08}s" data-i="${i}"><div class="device"><img src="${s.src}" alt="${s.name}" loading="lazy" decoding="async"></div><figcaption><b><em>${s.no}</em>${s.name.replace('-', ' · ')}</b><span>${s.note}</span></figcaption></figure>`).join('');
+    box.innerHTML = shots.map((s, i) => `<figure class="shot rv" style="--d:${(i % 4) * .08}s" data-i="${i}"><div class="device"><img src="${s.src}" alt="${s.name}" decoding="async" draggable="false"></div><figcaption><b><em>${s.no}</em>${s.name.replace('-', ' · ')}</b><span>${s.note}</span></figcaption></figure>`).join('');
+    rail(box, shots.length);
     const lb = document.createElement('div');
     lb.className = 'lb';
     lb.innerHTML = `<button class="pv" aria-label="上一张">‹</button><figure><div class="device"><img alt=""></div><figcaption></figcaption></figure><button class="nx" aria-label="下一张">›</button><button class="x" aria-label="关闭">✕</button>`;
@@ -60,10 +61,56 @@
     lb.addEventListener('touchend', e => { if (sx == null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); sx = null; });
   }
 
+  // 横滑图带：进度条、页码、左右按钮、鼠标拖着滑
+  function rail(box, n) {
+    const ctl = document.createElement('div');
+    ctl.className = 'rail-ctl';
+    ctl.innerHTML = `<div class="rail-bar"><i></i></div><span class="rail-no"><b>01</b> / ${String(n).padStart(2, '0')}</span><button class="rail-btn pv" aria-label="上一张">←</button><button class="rail-btn nx" aria-label="下一张">→</button>`;
+    box.after(ctl);
+    const bar = $('.rail-bar i', ctl), no = $('.rail-no b', ctl), pv = $('.pv', ctl), nx = $('.nx', ctl);
+    const step = () => { const f = $('.shot', box); return f ? f.getBoundingClientRect().width + parseFloat(getComputedStyle(box).columnGap || 36) : 400; };
+    const sync = () => {
+      const max = box.scrollWidth - box.clientWidth, k = max > 0 ? box.scrollLeft / max : 0;
+      const vis = box.clientWidth / box.scrollWidth;
+      bar.style.width = (vis * 100).toFixed(1) + '%';
+      bar.style.transform = `translateX(${(k * (1 / vis - 1) * 100).toFixed(1)}%)`;
+      const center = box.scrollLeft + box.clientWidth / 2;
+      let cur = 0; $$('.shot', box).forEach((f, i) => { if (f.offsetLeft <= center) cur = i; });
+      if (box.scrollLeft < 4) cur = 0; if (box.scrollLeft > max - 4) cur = n - 1;
+      no.textContent = String(cur + 1).padStart(2, '0');
+      pv.disabled = box.scrollLeft < 4; nx.disabled = box.scrollLeft > max - 4;
+    };
+    box.addEventListener('scroll', sync, { passive: true });
+    addEventListener('resize', sync);
+    pv.onclick = () => box.scrollBy({ left: -step(), behavior: 'smooth' });
+    nx.onclick = () => box.scrollBy({ left: step(), behavior: 'smooth' });
+    // 鼠标拖着滑（触屏本来就能滑）
+    let down = null, moved = false;
+    box.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button) return; down = { x: e.clientX, l: box.scrollLeft }; moved = false; });
+    addEventListener('pointermove', e => {
+      if (!down) return;
+      const dx = e.clientX - down.x;
+      if (!moved && Math.abs(dx) > 6) { moved = true; box.classList.add('drag'); }
+      if (moved) box.scrollLeft = down.l - dx;
+    });
+    addEventListener('pointerup', () => {
+      if (!down) return;
+      down = null;
+      if (moved) {
+        box.classList.remove('drag');
+        const w = step(), target = Math.round(box.scrollLeft / w) * w;
+        box.scrollTo({ left: target, behavior: 'smooth' });
+        box.addEventListener('click', e => { e.stopPropagation(); e.preventDefault(); }, { capture: true, once: true });
+      }
+    });
+    box.addEventListener('keydown', e => { if (e.key === 'ArrowRight') nx.click(); if (e.key === 'ArrowLeft') pv.click(); });
+    sync();
+  }
+
   // 开场两部手机跟着鼠标轻轻动
   function parallax() {
     const st = $('.stack');
-    if (!st || reduce) return;
+    if (!st || reduce || matchMedia('(pointer: coarse)').matches) return;
     const d1 = $('.d1', st), d2 = $('.d2', st);
     let tx = 0, ty = 0, x = 0, y = 0, raf = 0;
     const step = () => {

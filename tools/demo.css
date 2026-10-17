@@ -4,6 +4,8 @@
 #stage img.base { position: absolute; left: 0; top: 0; width: 750px; height: 1334px; pointer-events: none; }
 #stage .root { position: absolute; left: 0; top: 0; width: 750px; height: 1334px; pointer-events: none; }
 #stage svg.ov { position: absolute; left: 0; top: 0; width: 750px; height: 1334px; overflow: visible; pointer-events: none; will-change: transform; }
+/* 网站的全局 img { max-width: 100% } 会把挂在零宽容器里的精灵压成 0 宽，这里关掉 */
+#stage img { max-width: none; }
 #stage .spr { position: absolute; pointer-events: none; will-change: transform; -webkit-user-drag: none; }
 #stage .unit { position: absolute; left: 0; top: 0; width: 0; height: 0; will-change: transform; }
 #stage .unit .spr { will-change: auto; }
