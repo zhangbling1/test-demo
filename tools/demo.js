@@ -250,19 +250,19 @@
   function renderPanel() {
     if (!panel) return;
     const P = D.panel;
-    let h = `<div class="pn-sec"><div class="pn-h">页面 PAGES</div><div class="pn-pages">`;
+    let h = `<div class="pn-sec"><div class="pn-h">跳到页面</div><div class="pn-pages">`;
     D.order.forEach((id, i) => { h += `<button data-go="${id}" class="${id === D.id ? 'on' : ''}"><em>${String(i + 1).padStart(2, '0')}</em>${D.pages[id].name}</button>`; });
-    h += `</div></div><div class="pn-sec"><div class="pn-h">演示 CONTROL</div><div class="pn-row"><div class="seg"><button data-speed="1" class="${D.speed === 1 ? 'on' : ''}">×1</button><button data-speed="2" class="${D.speed === 2 ? 'on' : ''}">×2</button></div>`;
+    h += `</div></div><div class="pn-sec"><div class="pn-h">演示</div><div class="pn-row"><div class="seg"><button data-speed="1" class="${D.speed === 1 ? 'on' : ''}">×1</button><button data-speed="2" class="${D.speed === 2 ? 'on' : ''}">×2</button></div>`;
     h += `<button class="tgl${D.showHot ? ' on' : ''}" data-hot="1"><i></i>显示可点区域</button></div>`;
     const ctl = (P.controls || []).map((c, i) => [c, i]).filter(([c]) => !c.always);
     if (ctl.length) {
       const live = ctl.some(([c]) => !c.when || c.when());
-      h += `<div class="pn-acts${live ? '' : ' off'}" style="margin-top:14px">` + ctl.map(([c, i]) => `<button data-ctl="${i}">${c.label}</button>`).join('') + `</div>`;
-      if (!live) h += `<div class="pn-note">进入「战斗」页后可用</div>`;
+      h += `<div class="pn-acts${live ? '' : ' off'}">` + ctl.map(([c, i]) => `<button data-ctl="${i}">${c.label}</button>`).join('') + `</div>`;
+      if (!live) h += `<div class="pn-note">进入战斗后可用</div>`;
     }
-    (P.controls || []).forEach((c, i) => { if (c.always) h += `<div class="pn-note"><a href="#" data-ctl="${i}" style="color:var(--accent)">${c.label}</a></div>`; });
+    (P.controls || []).forEach((c, i) => { if (c.always) h += `<div class="pn-note"><a href="#" data-ctl="${i}">${c.label}</a></div>`; });
     h += `</div>`;
-    if (P.tips) h += `<div class="pn-sec"><div class="pn-h">怎么玩 HOW TO</div><ol class="pn-tips">` + P.tips.map(t => `<li>${t}</li>`).join('') + `</ol></div>`;
+    if (P.tips) h += `<div class="pn-sec"><div class="pn-h">怎么玩</div><ol class="pn-tips">` + P.tips.map(t => `<li>${t}</li>`).join('') + `</ol></div>`;
     panel.innerHTML = h;
   }
   D.refreshPanel = renderPanel;

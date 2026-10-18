@@ -9,91 +9,60 @@
 <link rel="stylesheet" href="../tools/demo.css">
 </head>
 <body class="t-zy">
-<div class="tex">
 
 <nav class="nav"><div class="wrap">
-  <a class="back" href="../index.html">← 测试demo</a>
-  <span class="name">赵云与阿斗</span>
-  <div class="links"><a href="#idea">思路</a><a href="#look">视觉</a><a href="#pages">页面</a><a href="#play">试玩</a></div>
-  <a class="other" href="../方向二-躺平过冬/index.html">方向二 · 躺平过冬 →</a>
+  <div class="crumb"><a class="home" href="../index.html">测试demo</a><i>/</i><b>赵云与阿斗</b></div>
+  <div class="links"><a href="#pages">页面</a><a href="#idea">思路</a><a href="#look">视觉</a><a href="#play">试玩</a></div>
+  <a class="other" href="../方向二-躺平过冬/index.html">躺平过冬 →</a>
 </div></nav>
 
-<header class="wrap hero">
-  <div>
-    <span class="kicker rv">方向一 · 改编自《赵云与阿斗》</span>
-    <h1 class="display rv" style="--d:.08s">赵云与阿斗</h1>
-    <p class="tagline rv" style="--d:.16s">三国的人，西游的画</p>
-    <p class="lead rv" style="--d:.22s">人物和玩法全照原作：<b>赵云、阿斗、刀枪骑弓、凑名字召武将</b>。画面换成西游的样子：Q版小人、祥云铺路、天宫的金瓦红柱。</p>
-    <div class="btns rv" style="--d:.28s"><a class="btn btn-p" href="#play">试玩一局 <span class="ar">→</span></a><a class="btn btn-g" href="#pages">看全部页面</a></div>
-    <div class="facts rv" style="--d:.34s"><div><b>07</b><span>个页面</span></div><div><b>1V1</b><span>竖屏对战</span></div><div><b>4+5</b><span>兵种 + 武将</span></div></div>
+<header class="wrap head">
+  <h1 class="logo">赵云与阿斗</h1>
+  <p>改编自《赵云与阿斗》。人物和规则不动，画面换成西游的画法：Q 版小人、祥云铺路、天宫的金瓦红柱。</p>
+  <div class="meta">
+    <span><b>7</b>个页面</span>
+    <span>750×1334 竖屏</span>
+    <a class="tl strong" href="#play">去试玩 ↓</a>
   </div>
-  <div class="stack rv" style="--d:.15s">
-    <div class="halo"></div>
-    <div class="device d2"><img src="export/web/04-战斗.jpg" alt="战斗"></div>
-    <div class="device d1"><img src="export/web/01-主页.jpg" alt="主页"></div>
-  </div>
-  <div class="scroll-hint"><i></i>往下看</div>
 </header>
 
+<section class="sec" id="pages"><div class="wrap">
+  <div id="gallery" class="gallery"></div>
+</div></section>
+
 <section class="sec" id="idea"><div class="wrap">
-  <div class="sec-head rv"><span class="no">01</span><h2><small>ADAPTATION</small>改编思路</h2><p>题目要求把《赵云与阿斗》做成西游题材。这里的做法是：故事和规则不动，只换画面——三国的人物，借西游的画法。</p></div>
-  <p class="big-quote rv">守的还是<em>阿斗</em>，打的还是<em>曹营</em>；<br>只是路成了祥云，命成了仙桃。</p>
-  <div class="map">
-    <div class="row rv"><div class="was">阿斗的三条命</div><div class="arr">→</div><div class="now"><b>三颗仙桃</b><span>掉一颗就补给馒头，留着原作「卖血经济」</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">刀 · 枪 · 骑 · 弓</div><div class="arr">→</div><div class="now"><b>四色令牌兵</b><span>刀红、枪蓝、骑绿、弓橙；等级是牌底的金菱</span></div></div>
-    <div class="row rv"><div class="was">凑名字召武将</div><div class="arr">→</div><div class="now"><b>「赵」+「云」召出赵云</b><span>底栏「将缘」显示凑字进度</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">怪物走的路</div><div class="arr">→</div><div class="now"><b>一条祥云路</b><span>云朵描边成路，终点坐着阿斗</span></div></div>
-    <div class="row rv"><div class="was">1V1 的对手</div><div class="arr">→</div><div class="now"><b>曹营夏侯惇，守曹冲</b><span>蜀魏对垒：打我方的是曹兵，打对手的是蜀兵</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">匹配</div><div class="arr">→</div><div class="now"><b>点将台</b><span>罗盘转着找对手，找到后两半对撞出一个「战」</span></div></div>
-    <div class="row rv"><div class="was">商店</div><div class="arr">→</div><div class="now"><b>云中集市</b><span>掌柜是刘备的财主糜竺；今日特供只在当天生效</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">按钮与导航</div><div class="arr">→</div><div class="now"><b>金令牌、天宫屋檐</b><span>主按钮是金色令牌，底栏是一排金瓦</span></div></div>
+  <div class="sec-h"><h2>改编思路</h2></div>
+  <div class="idea">
+    <div><p>题目要求把《赵云与阿斗》做成西游题材。这里保留原作的人物和规则，只借西游的画法——人物做成 Q 版小人，敌人走的路做成祥云，建筑用天宫的金瓦红柱。</p><p>对手改成曹营的夏侯惇，守的是曹冲。双方阵营分明，赵云不会和自家武将对打。</p></div>
+    <table class="cmp"><thead><tr><th>原作</th><th>这里</th></tr></thead><tbody><tr><td>阿斗的三条命</td><td>三颗仙桃；掉一颗补给馒头</td></tr><tr><td>刀、枪、骑、弓</td><td>四色兵牌，等级用金菱表示</td></tr><tr><td>凑名字召武将</td><td>「赵」「云」拼成赵云</td></tr><tr><td>怪物走的路</td><td>一条祥云路</td></tr><tr><td>匹配</td><td>点将台</td></tr><tr><td>商店</td><td>云中集市，掌柜是糜竺</td></tr></tbody></table>
   </div>
 </div></section>
 
 <section class="sec" id="look"><div class="wrap">
-  <div class="sec-head rv"><span class="no">02</span><h2><small>VISUAL</small>视觉</h2><p>Q版两头半身，豆豆眼、腮红、平涂粗描边；色彩取《大闹天宫》那一路的朱红、金和群青。</p></div>
-  <h3 class="sub-h rv">角色 <span>我方蜀、对手魏，各自守一个孩子</span></h3>
-  <div class="stage rv" id="lineup"><span class="cap">赵云 · 阿斗 · 夏侯惇 · 曹冲 · 曹兵 · 蜀兵 · 许褚</span></div>
-  <h3 class="sub-h rv">界面零件 <span>兵牌、武将牌、按钮、货币、血量</span></h3>
+  <div class="sec-h"><h2>视觉</h2><span>Q 版两头半身，豆豆眼、腮红，平涂加粗描边。</span></div>
+  <h3 class="h3">角色<span>我方蜀，守阿斗；对手魏，守曹冲</span></h3>
+  <div class="stage" id="lineup"></div>
+  <h3 class="h3">界面零件</h3>
   <div class="parts" id="parts"></div>
-  <h3 class="sub-h rv">配色</h3>
-  <div class="pal">
-    <div class="sw rv"><i style="background:#fbf2dc"></i><div><b>米白</b><code>#FBF2DC</code></div></div>
-    <div class="sw rv" style="--d:.04s"><i style="background:#2b1a12"></i><div><b>墨</b><code>#2B1A12</code></div></div>
-    <div class="sw rv" style="--d:.08s"><i style="background:#d6402b"></i><div><b>朱红</b><code>#D6402B</code></div></div>
-    <div class="sw rv" style="--d:.12s"><i style="background:linear-gradient(#fff2b0,#f7c445 45%,#d4861a)"></i><div><b>金</b><code>#F2B53A</code></div></div>
-    <div class="sw rv" style="--d:.16s"><i style="background:#2f6db0"></i><div><b>群青</b><code>#2F6DB0</code></div></div>
-    <div class="sw rv" style="--d:.2s"><i style="background:#36a07c"></i><div><b>石绿</b><code>#36A07C</code></div></div>
-    <div class="sw rv" style="--d:.24s"><i style="background:#8cc3e3"></i><div><b>天青</b><code>#8CC3E3</code></div></div>
-    <div class="sw rv" style="--d:.28s"><i style="background:#7a55a8"></i><div><b>紫</b><code>#7A55A8</code></div></div>
-  </div>
-  <h3 class="sub-h rv">字体</h3>
-  <div class="type">
-    <div class="rv"><div class="smp" style="font-family:'STXingkai','华文行楷',serif;color:var(--accent)">赵云与阿斗</div><b>标题 · 华文行楷</b><span>大标题、「大胜」「惜败」</span></div>
-    <div class="rv" style="--d:.06s"><div class="smp" style="font-family:'STXinwei','华文新魏',serif">刀枪骑弓</div><b>兵牌与按钮 · 华文新魏</b><span>兵牌、按钮、名牌</span></div>
-    <div class="rv" style="--d:.12s"><div class="smp" style="font-family:'STKaiti','KaiTi',serif;font-size:40px;padding:7px 0">再胜一局</div><b>说明文字 · 华文楷体</b><span>提示、描述、数据</span></div>
-  </div>
-</div></section>
-
-<section class="sec" id="pages"><div class="wrap">
-  <div class="sec-head rv"><span class="no">03</span><h2><small>SCREENS</small>页面一览</h2><p>750×1334 竖屏，右上角给小游戏的胶囊按钮留了位置。左右拖动或滑动翻看，点一张看原尺寸大图。</p></div>
-  <div class="gallery" id="gallery"></div>
+  <h3 class="h3">配色</h3>
+  <div class="pal"><div class="sw"><i style="background:#fbf2dc"></i><b>米白</b><code>#FBF2DC</code></div><div class="sw"><i style="background:#2b1a12"></i><b>墨</b><code>#2B1A12</code></div><div class="sw"><i style="background:#d6402b"></i><b>朱红</b><code>#D6402B</code></div><div class="sw"><i style="background:#f2b53a"></i><b>金</b><code>#F2B53A</code></div><div class="sw"><i style="background:#2f6db0"></i><b>群青</b><code>#2F6DB0</code></div><div class="sw"><i style="background:#36a07c"></i><b>石绿</b><code>#36A07C</code></div><div class="sw"><i style="background:#8cc3e3"></i><b>天青</b><code>#8CC3E3</code></div><div class="sw"><i style="background:#7a55a8"></i><b>紫</b><code>#7A55A8</code></div></div>
+  <h3 class="h3">字体</h3>
+  <div class="type"><div><div class="smp" style="font-family:'STXingkai','华文行楷',serif;color:var(--accent)">赵云与阿斗</div><b>标题 · 华文行楷</b><span>游戏名、「大胜」「惜败」</span></div><div><div class="smp" style="font-family:'STXinwei','华文新魏',serif">刀枪骑弓</div><b>兵牌与按钮 · 华文新魏</b><span>兵牌、按钮、名牌</span></div><div><div class="smp" style="font-family:'STKaiti','KaiTi',serif">再胜一局</div><b>说明 · 华文楷体</b><span>提示、描述、数据</span></div></div>
 </div></section>
 
 <section class="sec" id="play"><div class="wrap">
-  <div class="sec-head rv"><span class="no">04</span><h2><small>PLAYABLE</small>试玩</h2><p>从主页点「开战」，匹配完就进战斗。战斗能真玩：征兵抽字、拖上阵、同字同级合成、凑齐赵云放「七进七出」。</p></div>
+  <div class="sec-h"><h2>试玩</h2><span>主页点「开战」，匹配完进入战斗。征兵、拖上阵、同字同级合成、凑齐赵云放「七进七出」都能玩。</span></div>
   <div class="play">
-    <div class="play-phone rv"><div id="phone"><div id="stage"></div></div><div class="under"><span>面板里能跳页、加速、一键胜负</span><a href="demo.html">全屏试玩 ↗</a></div></div>
-    <aside class="panel rv" id="panel" style="--d:.1s"></aside>
+    <div class="play-phone"><div id="phone"><div id="stage"></div></div><div class="under"><span>面板里能跳页、加速</span><a class="tl" href="demo.html">全屏试玩</a></div></div>
+    <aside class="panel" id="panel"></aside>
   </div>
 </div></section>
 
-<div class="wrap" style="padding-top:20px">
-  <a class="next to-tp rv" href="../方向二-躺平过冬/index.html"><div><small>NEXT · 方向二</small><h3>躺平过冬</h3><p>《躺平发育》改成动物题材：躺平就是冬眠，熬到春天。</p></div><div class="device"><img src="../方向二-躺平过冬/export/web/01-主页.jpg" alt="躺平过冬主页" loading="lazy"></div></a>
-  <footer class="foot"><span>测试demo · 游戏 UI · 方向一</span><a href="../index.html">回到首页 ↑</a></footer>
-</div>
+<footer class="wrap foot">
+  <a class="nx" href="../方向二-躺平过冬/index.html">下一个方向<b>躺平过冬</b>→</a>
+  <a class="tl" href="../index.html">回到首页</a>
+</footer>
 
-</div>
 <script src="../tools/sketch.js"></script>
 <script src="pages.js"></script>
 <script src="../tools/demo.js"></script>

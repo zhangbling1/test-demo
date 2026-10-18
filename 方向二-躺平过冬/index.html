@@ -9,93 +9,60 @@
 <link rel="stylesheet" href="../tools/demo.css">
 </head>
 <body class="t-tp">
-<div class="tex">
 
 <nav class="nav"><div class="wrap">
-  <a class="back" href="../index.html">← 测试demo</a>
-  <span class="name">躺平过冬</span>
-  <div class="links"><a href="#idea">思路</a><a href="#look">视觉</a><a href="#pages">页面</a><a href="#play">试玩</a></div>
-  <a class="other" href="../方向一-赵云与阿斗/index.html">方向一 · 赵云与阿斗 →</a>
+  <div class="crumb"><a class="home" href="../index.html">测试demo</a><i>/</i><b>躺平过冬</b></div>
+  <div class="links"><a href="#pages">页面</a><a href="#idea">思路</a><a href="#look">视觉</a><a href="#play">试玩</a></div>
+  <a class="other" href="../方向一-赵云与阿斗/index.html">赵云与阿斗 →</a>
 </div></nav>
 
-<header class="wrap hero">
-  <div>
-    <span class="kicker rv">方向二 · 改编自《躺平发育》</span>
-    <h1 class="display rv" style="--d:.08s">躺平过冬</h1>
-    <p class="tagline rv" style="--d:.16s">躺平，就是冬眠</p>
-    <p class="lead rv" style="--d:.22s">宿舍换成地底下一间间小洞，床换成草窝；挠门的猛鬼换成黄鼠狼<b>「黄大仙」</b>；撑到天亮，改成<b>熬到春天</b>。</p>
-    <div class="btns rv" style="--d:.28s"><a class="btn btn-p" href="#play">试玩一局 <span class="ar">→</span></a><a class="btn btn-g" href="#pages">看全部页面</a></div>
-    <div class="facts rv" style="--d:.34s"><div><b>06</b><span>个页面</span></div><div><b>6</b><span>只小动物同局</span></div><div><b>6</b><span>种防守设施</span></div></div>
+<header class="wrap head">
+  <h1 class="logo">躺平过冬</h1>
+  <p>改编自《躺平发育》，换成动物题材：躺平就是冬眠。宿舍换成地底的小洞，猛鬼换成黄鼠狼「黄大仙」，撑到天亮改成熬到春天。</p>
+  <div class="meta">
+    <span><b>6</b>个页面</span>
+    <span>750×1334 竖屏</span>
+    <a class="tl strong" href="#play">去试玩 ↓</a>
   </div>
-  <div class="stack rv" style="--d:.15s">
-    <div class="halo"></div>
-    <div class="device d2"><img src="export/web/03-战斗.jpg" alt="战斗"></div>
-    <div class="device d1"><img src="export/web/01-主页.jpg" alt="主页"></div>
-  </div>
-  <div class="scroll-hint"><i></i>往下看</div>
 </header>
 
+<section class="sec" id="pages"><div class="wrap">
+  <div id="gallery" class="gallery"></div>
+</div></section>
+
 <section class="sec" id="idea"><div class="wrap">
-  <div class="sec-head rv"><span class="no">01</span><h2><small>ADAPTATION</small>改编思路</h2><p>题目给了校园、乡村、动物几个方向。原作本来就是宿舍，校园离得太近；这里选动物，把「躺平」落到冬眠上——睡着的时候本来就在攒东西。</p></div>
-  <p class="big-quote rv">别人躺平在宿舍，<em>它们躺平在地底</em>；<br>熬过黄大仙，<em>就是春天</em>。</p>
-  <div class="map">
-    <div class="row rv"><div class="was">宿舍房间</div><div class="arr">→</div><div class="now"><b>地下小洞</b><span>一条横隧道串起各家洞口</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">床 · 躺着赚金币</div><div class="arr">→</div><div class="now"><b>窝 · 睡着攒松果</b><span>草窝、棉絮窝、羽绒窝，越软攒得越快</span></div></div>
-    <div class="row rv"><div class="was">门</div><div class="arr">→</div><div class="now"><b>木板门到铁罐盖门</b><span>被挠会留下三道爪痕</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">猛鬼</div><div class="arr">→</div><div class="now"><b>黄大仙（黄鼠狼）</b><span>越晚越壮；被打跑去养伤，回来升一级</span></div></div>
-    <div class="row rv"><div class="was">炮台</div><div class="arr">→</div><div class="now"><b>松果弹弓 · 蜂窝</b><span>弹弓打得快，蜂窝伤害高</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">地雷 · 维修台</div><div class="arr">→</div><div class="now"><b>栗子刺球 · 织补蜘蛛</b><span>门被挠穿时刺球扎它一下；蜘蛛每秒补门</span></div></div>
-    <div class="row rv"><div class="was">电力</div><div class="arr">→</div><div class="now"><b>萤火灯</b><span>蜂窝、瞌睡菇要萤火才能造</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">撑到天亮</div><div class="arr">→</div><div class="now"><b>熬到春天</b><span>顶上的进度条从雪花走到嫩芽</span></div></div>
-    <div class="row rv"><div class="was">猎梦者模式</div><div class="arr">→</div><div class="now"><b>当黄大仙</b><span>攒够 12 根黄大仙的毛解锁</span></div></div>
-    <div class="row rv" style="--d:.06s"><div class="was">被鬼抓走</div><div class="arr">→</div><div class="now"><b>被叼走</b><span>输了也给一句「下次试试」，告诉玩家差在哪</span></div></div>
+  <div class="sec-h"><h2>改编思路</h2></div>
+  <div class="idea">
+    <div><p>题目给了校园、乡村、动物几个方向。原作本来就发生在宿舍，做校园差别太小，所以选了动物。</p><p>冬眠和躺平是一回事：睡着的时候就在攒东西。玩法照原作——睡觉攒钱、升门、造设施，熬过黄大仙。</p></div>
+    <table class="cmp"><thead><tr><th>原作</th><th>这里</th></tr></thead><tbody><tr><td>宿舍房间</td><td>地底的小洞</td></tr><tr><td>床，躺着赚钱</td><td>窝，睡着攒松果</td></tr><tr><td>猛鬼</td><td>黄大仙（黄鼠狼）</td></tr><tr><td>炮台、地雷、维修台</td><td>松果弹弓、栗子刺球、织补蜘蛛</td></tr><tr><td>电力</td><td>萤火灯</td></tr><tr><td>撑到天亮</td><td>熬到春天</td></tr></tbody></table>
   </div>
 </div></section>
 
 <section class="sec" id="look"><div class="wrap">
-  <div class="sec-head rv"><span class="no">02</span><h2><small>VISUAL</small>视觉</h2><p>彩铅加蜡笔的绘本画法：铅笔线用深棕不用纯黑，上色留着纸纹；地面上是冷的雪蓝，洞里是暖的灯黄。</p></div>
-  <h3 class="sub-h rv">角色 <span>六只同局冬眠的小动物，和来挠门的黄大仙</span></h3>
-  <div class="stage rv" id="lineup"><span class="cap" style="color:#7d6b58">阿糯 · 刺刺 · 小栗 · 呱呱 · 阿墩 · 老獾掌柜 · 黄大仙</span></div>
-  <h3 class="sub-h rv">界面零件 <span>枕头按钮、设施、窝、门、血条</span></h3>
+  <div class="sec-h"><h2>视觉</h2><span>彩铅加蜡笔的绘本画法：深棕铅笔线，上色留纸纹；地面上冷，洞里暖。</span></div>
+  <h3 class="h3">角色<span>六只同局冬眠的小动物，和来挠门的黄大仙</span></h3>
+  <div class="stage" id="lineup"></div>
+  <h3 class="h3">界面零件</h3>
   <div class="parts" id="parts"></div>
-  <h3 class="sub-h rv">配色</h3>
-  <div class="pal">
-    <div class="sw rv"><i style="background:#f7f0e1"></i><div><b>纸</b><code>#F7F0E1</code></div></div>
-    <div class="sw rv" style="--d:.04s"><i style="background:#3f2c20"></i><div><b>铅笔棕</b><code>#3F2C20</code></div></div>
-    <div class="sw rv" style="--d:.08s"><i style="background:#94673f"></i><div><b>泥土</b><code>#94673F</code></div></div>
-    <div class="sw rv" style="--d:.12s"><i style="background:#f3c24f"></i><div><b>暖灯</b><code>#F3C24F</code></div></div>
-    <div class="sw rv" style="--d:.16s"><i style="background:#ea9446"></i><div><b>橘</b><code>#EA9446</code></div></div>
-    <div class="sw rv" style="--d:.2s"><i style="background:#6c9bc6"></i><div><b>雪蓝</b><code>#6C9BC6</code></div></div>
-    <div class="sw rv" style="--d:.24s"><i style="background:#7fae58"></i><div><b>嫩芽</b><code>#7FAE58</code></div></div>
-    <div class="sw rv" style="--d:.28s"><i style="background:#d79c48"></i><div><b>黄大仙</b><code>#D79C48</code></div></div>
-  </div>
-  <h3 class="sub-h rv">字体</h3>
-  <div class="type">
-    <div class="rv"><div class="smp" style="font-family:'STHupo','华文琥珀',sans-serif;color:#f6a24a;-webkit-text-stroke:1.5px #3f2c20;paint-order:stroke fill">躺平过冬</div><b>标题与按钮 · 华文琥珀</b><span>圆胖的字，像贴纸</span></div>
-    <div class="rv" style="--d:.06s"><div class="smp" style="font-family:'YouYuan','幼圆',sans-serif;font-weight:bold;font-size:40px;padding:7px 0">离春天还有</div><b>正文 · 幼圆</b><span>提示、说明、价签</span></div>
-    <div class="rv" style="--d:.12s"><div class="smp" style="font-family:'STHupo','华文琥珀',sans-serif;font-size:44px;padding:4px 0;color:var(--accent)">+18/秒</div><b>数字 · 华文琥珀</b><span>松果、血量、倒计时</span></div>
-  </div>
-</div></section>
-
-<section class="sec" id="pages"><div class="wrap">
-  <div class="sec-head rv"><span class="no">03</span><h2><small>SCREENS</small>页面一览</h2><p>750×1334 竖屏，右上角给小游戏的胶囊按钮留了位置。左右拖动或滑动翻看，点一张看原尺寸大图。</p></div>
-  <div class="gallery" id="gallery"></div>
+  <h3 class="h3">配色</h3>
+  <div class="pal"><div class="sw"><i style="background:#f7f0e1"></i><b>纸</b><code>#F7F0E1</code></div><div class="sw"><i style="background:#3f2c20"></i><b>铅笔棕</b><code>#3F2C20</code></div><div class="sw"><i style="background:#94673f"></i><b>泥土</b><code>#94673F</code></div><div class="sw"><i style="background:#f3c24f"></i><b>暖灯</b><code>#F3C24F</code></div><div class="sw"><i style="background:#ea9446"></i><b>橘</b><code>#EA9446</code></div><div class="sw"><i style="background:#6c9bc6"></i><b>雪蓝</b><code>#6C9BC6</code></div><div class="sw"><i style="background:#7fae58"></i><b>嫩芽</b><code>#7FAE58</code></div><div class="sw"><i style="background:#d79c48"></i><b>黄大仙</b><code>#D79C48</code></div></div>
+  <h3 class="h3">字体</h3>
+  <div class="type"><div><div class="smp" style="font-family:'STHupo','华文琥珀',sans-serif;color:#f2a54c">躺平过冬</div><b>标题与按钮 · 华文琥珀</b><span>游戏名、按钮、数字</span></div><div><div class="smp" style="font-family:'YouYuan','幼圆',sans-serif;font-weight:bold;font-size:36px">离春天还有</div><b>正文 · 幼圆</b><span>提示、说明、价签</span></div><div><div class="smp" style="font-family:'STHupo','华文琥珀',sans-serif;color:var(--accent)">+18/秒</div><b>数字 · 华文琥珀</b><span>松果、血量、倒计时</span></div></div>
 </div></section>
 
 <section class="sec" id="play"><div class="wrap">
-  <div class="sec-head rv"><span class="no">04</span><h2><small>PLAYABLE</small>试玩</h2><p>从主页点「开始冬眠」，凑齐 6 只就开局。点洞里的空地、再点卡片造设施；弹弓和蜂窝打黄大仙，蜘蛛补门，熬满两分钟就是春天。</p></div>
+  <div class="sec-h"><h2>试玩</h2><span>主页点「开始冬眠」，凑齐 6 只就开局。点洞里的空地、再点卡片造设施；弹弓和蜂窝打黄大仙，熬满两分钟就是春天。</span></div>
   <div class="play">
-    <div class="play-phone rv"><div id="phone"><div id="stage"></div></div><div class="under"><span>面板里能跳页、加速、一键胜负</span><a href="demo.html">全屏试玩 ↗</a></div></div>
-    <aside class="panel rv" id="panel" style="--d:.1s"></aside>
+    <div class="play-phone"><div id="phone"><div id="stage"></div></div><div class="under"><span>面板里能跳页、加速</span><a class="tl" href="demo.html">全屏试玩</a></div></div>
+    <aside class="panel" id="panel"></aside>
   </div>
 </div></section>
 
-<div class="wrap" style="padding-top:20px">
-  <a class="next to-zy rv" href="../方向一-赵云与阿斗/index.html"><div><small>NEXT · 方向一</small><h3>赵云与阿斗</h3><p>《赵云与阿斗》做成西游画风：三国的人，西游的画。</p></div><div class="device"><img src="../方向一-赵云与阿斗/export/web/01-主页.jpg" alt="赵云与阿斗主页" loading="lazy"></div></a>
-  <footer class="foot"><span>测试demo · 游戏 UI · 方向二</span><a href="../index.html">回到首页 ↑</a></footer>
-</div>
+<footer class="wrap foot">
+  <a class="nx" href="../方向一-赵云与阿斗/index.html">下一个方向<b>赵云与阿斗</b>→</a>
+  <a class="tl" href="../index.html">回到首页</a>
+</footer>
 
-</div>
 <script src="../tools/sketch.js"></script>
 <script src="pages.js"></script>
 <script src="../tools/demo.js"></script>
