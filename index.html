@@ -6,26 +6,66 @@
 <title>测试demo · 游戏 UI</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="site/site.css">
+<script>document.documentElement.classList.add('js');addEventListener('pagereveal',function(e){if(e.viewTransition)(window.__intro||[]).forEach(function(a){a.finish()})},{once:true});</script>
 </head>
 <body>
 <div class="hub-top"><span><b>测试demo</b>　游戏 UI 两个方向</span><span>750×1334 竖屏小游戏，战斗可试玩</span></div>
 <main class="hub">
   <section class="leaf t-zy">
-    <a class="shot-a" href="方向一-赵云与阿斗/index.html"><img src="方向一-赵云与阿斗/export/web/01-主页.jpg" alt="赵云与阿斗 主页"></a>
+    <a class="shot-a" href="方向一-赵云与阿斗/index.html"><span class="tilt"><img style="view-transition-name:zy-shot" src="方向一-赵云与阿斗/export/web/01-主页.jpg" alt="赵云与阿斗 主页"></span></a>
     <div class="leaf-in">
-      <h1 class="logo">赵云与阿斗</h1>
+      <h1 class="logo" style="view-transition-name:zy-logo">赵云与阿斗</h1>
       <p>改编自《赵云与阿斗》，西游画风 · 7 个页面</p>
       <div class="acts"><a class="tl strong" href="方向一-赵云与阿斗/index.html">看页面</a><a class="tl" href="方向一-赵云与阿斗/demo.html">试玩</a></div>
     </div>
   </section>
   <section class="leaf t-tp">
-    <a class="shot-a" href="方向二-躺平过冬/index.html"><img src="方向二-躺平过冬/export/web/01-主页.jpg" alt="躺平过冬 主页"></a>
+    <a class="shot-a" href="方向二-躺平过冬/index.html"><span class="tilt"><img style="view-transition-name:tp-shot" src="方向二-躺平过冬/export/web/01-主页.jpg" alt="躺平过冬 主页"></span></a>
     <div class="leaf-in">
-      <h1 class="logo">躺平过冬</h1>
+      <h1 class="logo" style="view-transition-name:tp-logo">躺平过冬</h1>
       <p>改编自《躺平发育》，动物题材 · 6 个页面</p>
       <div class="acts"><a class="tl strong" href="方向二-躺平过冬/index.html">看页面</a><a class="tl" href="方向二-躺平过冬/demo.html">试玩</a></div>
     </div>
   </section>
 </main>
+<!-- intro -->
+<script>
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var E = 'cubic-bezier(.2,.8,.2,1)', L = window.__intro = [];
+  var A = function (el, kf, o) { if (!el) return; o.fill = 'backwards'; o.easing = o.easing || E; L.push(el.animate(kf, o)); };
+  var q = function (s) { return document.querySelector(s); }, qa = function (s) { return [].slice.call(document.querySelectorAll(s)); };
+  // 标题逐字落下
+  var drop = function (el, delay) {
+    if (!el) return;
+    el.innerHTML = Array.from(el.textContent).map(function (c) { return '<span class="c">' + c + '</span>'; }).join('');
+    [].slice.call(el.children).forEach(function (c, i) {
+      A(c, [{ transform: 'translateY(-60px) rotate(-10deg)', opacity: 0 }, { transform: 'translateY(8px) rotate(3deg)', opacity: 1, offset: .62 },
+        { transform: 'translateY(-3px) rotate(-1deg)', offset: .82 }, { transform: 'none', opacity: 1 }], { duration: 760, delay: delay + i * 70 });
+    });
+  };
+  var up = function (el, d) { A(el, [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: d }); };
+  if (q('.head')) {
+    A(q('.nav'), [{ transform: 'translateY(-100%)' }, { transform: 'none' }], { duration: 600 });
+    drop(q('.head .logo'), 80);
+    up(q('.head p'), 380);
+    qa('.head .meta > *').forEach(function (m, i) { up(m, 480 + i * 70); });
+    // 截图像发牌一样一张张进来
+    qa('#gallery .shot').forEach(function (f, i) {
+      A(f, [{ transform: 'translateX(160px) rotate(6deg) scale(.9)', opacity: 0 }, { transform: 'translateX(-8px) rotate(-.6deg)', opacity: 1, offset: .7 },
+        { transform: 'none', opacity: 1 }], { duration: 900, delay: 180 + i * 95 });
+    });
+  }
+  qa('.hub .leaf').forEach(function (lf, i) {
+    var dir = i ? 1 : -1;
+    A(lf.querySelector('.shot-a'), [{ transform: 'translateX(' + dir * 90 + 'px) rotate(' + dir * 8 + 'deg)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 1000, delay: 120 + i * 140 });
+    drop(lf.querySelector('.logo'), 380 + i * 160);
+    up(lf.querySelector('.leaf-in p'), 700 + i * 140);
+    up(lf.querySelector('.leaf-in .acts'), 820 + i * 140);
+  });
+})();
+</script>
+<!-- /intro -->
+<script src="site/site.js"></script>
 </body>
 </html>

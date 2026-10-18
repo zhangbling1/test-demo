@@ -7,6 +7,7 @@
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="../site/site.css">
 <link rel="stylesheet" href="../tools/demo.css">
+<script>document.documentElement.classList.add('js');addEventListener('pagereveal',function(e){if(e.viewTransition)(window.__intro||[]).forEach(function(a){a.finish()})},{once:true});</script>
 </head>
 <body class="t-zy">
 
@@ -17,7 +18,7 @@
 </div></nav>
 
 <header class="wrap head">
-  <h1 class="logo">赵云与阿斗</h1>
+  <h1 class="logo" style="view-transition-name:zy-logo">赵云与阿斗</h1>
   <p>改编自《赵云与阿斗》。人物和规则不动，画面换成西游的画法：Q 版小人、祥云铺路、天宫的金瓦红柱。</p>
   <div class="meta">
     <span><b>7</b>个页面</span>
@@ -27,9 +28,55 @@
 </header>
 
 <section class="sec" id="pages"><div class="wrap">
-  <div id="gallery" class="gallery"></div>
+  <div id="gallery" class="gallery">
+    <figure class="shot" data-i="0" data-big="export/01-主页.png"><img src="export/web/01-主页.jpg" alt="主页" decoding="async" draggable="false" style="view-transition-name:zy-shot"><figcaption><em>01</em><b>主页</b><span>赵云抱着阿斗站在云上，身后天宫门楼的匾写着「长坂坡」。</span></figcaption></figure>
+    <figure class="shot" data-i="1" data-big="export/02-匹配.png"><img src="export/web/02-匹配.jpg" alt="匹配" decoding="async" draggable="false"><figcaption><em>02</em><b>匹配</b><span>点将台的罗盘转着找对手；下面是出战阵容。</span></figcaption></figure>
+    <figure class="shot" data-i="2" data-big="export/03-匹配成功.png"><img src="export/web/03-匹配成功.jpg" alt="匹配成功" decoding="async" draggable="false"><figcaption><em>03</em><b>匹配成功</b><span>上蓝下红，祥云一线隔开；中间一块金牌「战」。</span></figcaption></figure>
+    <figure class="shot" data-i="3" data-big="export/04-战斗.png"><img src="export/web/04-战斗.jpg" alt="战斗" decoding="async" draggable="false"><figcaption><em>04</em><b>战斗</b><span>上对手下自己；兵营抽字、拖上阵、同字同级合成，凑齐名字召武将。</span></figcaption></figure>
+    <figure class="shot" data-i="4" data-big="export/05-结算-胜.png"><img src="export/web/05-结算-胜.jpg" alt="结算 · 胜" decoding="async" draggable="false"><figcaption><em>05</em><b>结算 · 胜</b><span>大胜：赵云喊一嗓子，阿斗举着馒头蹦起来。</span></figcaption></figure>
+    <figure class="shot" data-i="5" data-big="export/06-结算-败.png"><img src="export/web/06-结算-败.jpg" alt="结算 · 败" decoding="async" draggable="false"><figcaption><em>06</em><b>结算 · 败</b><span>惜败：阿斗哭了，卡片告诉你下次怎么守。</span></figcaption></figure>
+    <figure class="shot" data-i="6" data-big="export/07-商店.png"><img src="export/web/07-商店.jpg" alt="商店" decoding="async" draggable="false"><figcaption><em>07</em><b>商店</b><span>云中集市，掌柜是刘备的财主糜竺；今日特供当天有效。</span></figcaption></figure>
+  </div>
 </div></section>
 
+<!-- intro -->
+<script>
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var E = 'cubic-bezier(.2,.8,.2,1)', L = window.__intro = [];
+  var A = function (el, kf, o) { if (!el) return; o.fill = 'backwards'; o.easing = o.easing || E; L.push(el.animate(kf, o)); };
+  var q = function (s) { return document.querySelector(s); }, qa = function (s) { return [].slice.call(document.querySelectorAll(s)); };
+  // 标题逐字落下
+  var drop = function (el, delay) {
+    if (!el) return;
+    el.innerHTML = Array.from(el.textContent).map(function (c) { return '<span class="c">' + c + '</span>'; }).join('');
+    [].slice.call(el.children).forEach(function (c, i) {
+      A(c, [{ transform: 'translateY(-60px) rotate(-10deg)', opacity: 0 }, { transform: 'translateY(8px) rotate(3deg)', opacity: 1, offset: .62 },
+        { transform: 'translateY(-3px) rotate(-1deg)', offset: .82 }, { transform: 'none', opacity: 1 }], { duration: 760, delay: delay + i * 70 });
+    });
+  };
+  var up = function (el, d) { A(el, [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: d }); };
+  if (q('.head')) {
+    A(q('.nav'), [{ transform: 'translateY(-100%)' }, { transform: 'none' }], { duration: 600 });
+    drop(q('.head .logo'), 80);
+    up(q('.head p'), 380);
+    qa('.head .meta > *').forEach(function (m, i) { up(m, 480 + i * 70); });
+    // 截图像发牌一样一张张进来
+    qa('#gallery .shot').forEach(function (f, i) {
+      A(f, [{ transform: 'translateX(160px) rotate(6deg) scale(.9)', opacity: 0 }, { transform: 'translateX(-8px) rotate(-.6deg)', opacity: 1, offset: .7 },
+        { transform: 'none', opacity: 1 }], { duration: 900, delay: 180 + i * 95 });
+    });
+  }
+  qa('.hub .leaf').forEach(function (lf, i) {
+    var dir = i ? 1 : -1;
+    A(lf.querySelector('.shot-a'), [{ transform: 'translateX(' + dir * 90 + 'px) rotate(' + dir * 8 + 'deg)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 1000, delay: 120 + i * 140 });
+    drop(lf.querySelector('.logo'), 380 + i * 160);
+    up(lf.querySelector('.leaf-in p'), 700 + i * 140);
+    up(lf.querySelector('.leaf-in .acts'), 820 + i * 140);
+  });
+})();
+</script>
+<!-- /intro -->
 <section class="sec" id="idea"><div class="wrap">
   <div class="sec-h"><h2>改编思路</h2></div>
   <div class="idea">
@@ -76,16 +123,18 @@
     window.SITE = {
       defs: P.GRAD,
       lineup() {
+        let hi = 0;
+        const hop = x => `<g class="hop" style="--i:${hi++}">${x}</g>`;
         let s = `<rect width="1200" height="460" fill="url(#skyG)"/>` + P.rays(600, 120, 900, 24, .35);
         s += P.puff(-60, 330, 420, 90, { n: 6 }) + P.puff(360, 340, 520, 80, { n: 7 }) + P.puff(840, 330, 440, 90, { n: 6 });
         const g = (x, w) => `<ellipse cx="${x}" cy="368" rx="${w}" ry="10" fill="#2b1a12" opacity=".14"/>`;
-        s += g(150, 70) + P.zhaoyunFull(150, 262, .95);
-        s += g(330, 34) + P.adou(330, 282, .9, { body: true, happy: true, cheer: true });
-        s += g(520, 62) + P.xiahouFull(500, 262, .95);
-        s += g(760, 34) + P.caochong(760, 292, .9, { body: true });
-        s += g(890, 26) + P.caobing(890, 322, 1.3);
-        s += g(990, 26) + P.caobing(990, 322, 1.3, { shu: true });
-        s += g(1110, 40) + P.caobing(1110, 312, 1.65, { boss: true });
+        s += g(150, 70) + hop(P.zhaoyunFull(150, 262, .95));
+        s += g(330, 34) + hop(P.adou(330, 282, .9, { body: true, happy: true, cheer: true }));
+        s += g(520, 62) + hop(P.xiahouFull(500, 262, .95));
+        s += g(760, 34) + hop(P.caochong(760, 292, .9, { body: true }));
+        s += g(890, 26) + hop(P.caobing(890, 322, 1.3));
+        s += g(990, 26) + hop(P.caobing(990, 322, 1.3, { shu: true }));
+        s += g(1110, 40) + hop(P.caobing(1110, 312, 1.65, { boss: true }));
         s += tag(150, 412, '赵云') + tag(330, 412, '阿斗') + tag(520, 412, '夏侯惇') + tag(760, 412, '曹冲') + tag(890, 412, '曹兵') + tag(990, 412, '蜀兵') + tag(1110, 412, '许褚');
         return vb(1200, 460, s);
       },

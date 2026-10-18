@@ -34,7 +34,10 @@ python -m http.server 5195 --directory 测试demo
 ```bash
 node tools/export.cjs 方向一-赵云与阿斗 --board
 python tools/webimg.py
+python tools/build-site.py
 ```
+
+`build-site.py` 把截图带和开场动效直接写进页面（标题逐字落下、截图发牌、首页两栏滑进来），改了页面名、说明或者重新出图后跑一次。
 
 ## 关于画面
 
